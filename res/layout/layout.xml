@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- タブ表示に関するポイント: 
+	(1) TabHost要素のidは「tabhost」でなければならない。
+	(2) コンテンツを表示する要素のidは「tabcontent」としなければならない
+	(3) タブを表示する要素のidは「tabs」としなければならない。
+-->
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:id="@android:id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        
+    
+    <!-- タブを画面下部に表示する際のポイント:  (1) FrameLayoutではlayout_alighnParentTopをtrueにする。 (2) TabWidget要素ではlayout_alignParentBottomをtrueにします。 -->
+    <RelativeLayout android:layout_width="fill_parent"
+                    android:id="@+id/linearLayout1"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+        <FrameLayout android:layout_width="fill_parent"
+                     android:layout_height="fill_parent"
+                     android:id="@android:id/tabcontent"
+                     android:layout_alignParentTop="true">
+        </FrameLayout>
+        <TabWidget android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:id="@android:id/tabs"
+                   android:layout_alignParentBottom="true">
+        </TabWidget>
+    </RelativeLayout>
+</TabHost>
